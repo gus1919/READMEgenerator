@@ -23,21 +23,65 @@ const promptUser = () => {
     //Installation Instructions
     {
       type: 'input',
-      name: 'installation',
-      message: 'What are the steps to install this project?',
+      name: 'installation1',
+      message: 'Installation Step1:',
     },
+    {
+      type: 'input',
+      name: 'installation2',
+      message: 'Installation Step2:',
+    },
+    {
+      type: 'input',
+      name: 'installation3',
+      message: 'Installation Step3:',
+    },
+    {
+      type: 'input',
+      name: 'installation4',
+      message: 'Installation Step4:',
+    },
+    {
+      type: 'input',
+      name: 'installation5',
+      message: 'Installation Step5:',
+    },
+
     //How to run the program
     {
       type: 'input',
       name: 'Usage',
-      message: 'How do you use the project?',
+      message: 'How do you run the project?',
     },
+    
     //contributors
     {
       type: 'input',
       name: 'credits',
-      message: 'Who was involved in this project?',
+      message: 'Please provide the names and emails of any collaborators.',
     },
+
+    //testing
+    {
+      type: 'input',
+      name: 'tests',
+      message: 'Are there any tests for the project?',
+    },
+    //features
+    {
+      type: 'checkbox',
+      name: 'features',
+      message: 'What programs did you use?',
+      choices: ['HTML', 'CSS', 'Javascript', 'node.js', 'API'],
+    },
+
+    {
+      type: 'input',
+      name: 'features',
+      message: 'Any other programs not listed?',
+         },
+
+    //questions
     {
       type: 'input',
       name: 'githubusername',
@@ -48,35 +92,26 @@ const promptUser = () => {
       name: 'githubuserprofile',
       message: 'Please enter your Github Profile Link',
     },
-    //testing
-    {
-      type: 'input',
-      name: 'tests',
-      message: 'Please note any tests for your application.',
-    },
-    //features
-    {
-      type: 'checkbox',
-      name: 'features',
-      message: 'What programs did you use?',
-      choices: ['HTML', 'CSS', 'Javascript', 'node.js', 'API'],
-    },
     //License
     {
-       type: 'checkbox',
-       name: 'licenses',
-       message: 'Which License did you use?',
-       choices: ['Apache License 2.0', 'GNU General Public License v3.0', 'MIT License',],
-     }, 
+      type: 'list',
+      name: 'license',
+      message: 'Which License did you use?',
+      choices: ['Apache License 2.0', 'GNU General Public License v3.0', 'MIT License',],
+    }, 
   ]);
 };
 
 const generateMD  = (answers) =>
+
   `# **${answers.title}** 
+  ---
+
+  ![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
 
   ## Description
   
-  > ${answers.description}
+  >${answers.description}
   
   ---
   ## table of contents
@@ -91,24 +126,41 @@ const generateMD  = (answers) =>
   ---
   ## Installation
    
-    ${answers.installation} 
+   >${answers.installation1}
+
+   >${answers.installation2} 
+   
+   >${answers.installation3} 
+   
+   >${answers.installation4} 
+   
+   >${answers.installation5} 
+    
 
 
   ---
   ## Usage
-  > ${answers.Usage}
+
+  >${answers.Usage}
+  
   ---
   ## Contributors
   
   ### ${answers.credits } 
+  
   ---
-
+  ## Features
+  * ${answers.features}
+  ---
   ## Tests
 
-  ${answers.tests} 
+  ### ${answers.tests} 
+  
   ---
-
-  ## license
+  ## License
+  
+  ### ${answers.license}
+  
   ---
   `;
 
@@ -116,7 +168,7 @@ const generateMD  = (answers) =>
 const init = () => {
   promptUser()
     .then((answers) => writeFileAsync('README2.md', generateMD(answers)))
-    .then(() => console.log('Successfully wrote to index.html'))
+    .then(() => console.log('Successfully wrote to README2.md'))
     .catch((err) => console.error(err));
 };
 

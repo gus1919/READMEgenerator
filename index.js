@@ -23,30 +23,9 @@ const promptUser = () => {
     //Installation Instructions
     {
       type: 'input',
-      name: 'installation1',
-      message: 'Installation Step1:',
+      name: 'installation',
+      message: 'What dependencies are needed for this project?',
     },
-    {
-      type: 'input',
-      name: 'installation2',
-      message: 'Installation Step2:',
-    },
-    {
-      type: 'input',
-      name: 'installation3',
-      message: 'Installation Step3:',
-    },
-    {
-      type: 'input',
-      name: 'installation4',
-      message: 'Installation Step4:',
-    },
-    {
-      type: 'input',
-      name: 'installation5',
-      message: 'Installation Step5:',
-    },
-
     //How to run the program
     {
       type: 'input',
@@ -97,7 +76,7 @@ const promptUser = () => {
       type: 'list',
       name: 'license',
       message: 'Which License did you use?',
-      choices: ['Apache License 2.0', 'GNU General Public License v3.0', 'MIT License',],
+      choices: ['Apache', 'GNU', 'MIT',],
     }, 
   ]);
 };
@@ -105,10 +84,10 @@ const promptUser = () => {
 const generateMD  = (answers) =>
 
   `# **${answers.title}** 
+  
+
+  ![License](https://img.shields.io/badge/license-${answers.license}-blue.svg)
   ---
-
-  ![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
-
   ## Description
   
   >${answers.description}
@@ -126,18 +105,8 @@ const generateMD  = (answers) =>
   ---
   ## Installation
    
-   >${answers.installation1}
-
-   >${answers.installation2} 
-   
-   >${answers.installation3} 
-   
-   >${answers.installation4} 
-   
-   >${answers.installation5} 
-    
-
-
+   >${answers.installation}
+ 
   ---
   ## Usage
 
@@ -146,7 +115,11 @@ const generateMD  = (answers) =>
   ---
   ## Contributors
   
-  ### ${answers.credits } 
+  ### Project Lead: ${answers.githubusername}
+
+  GIThub Profile: ${answers.githubuserprofile}
+  
+  Additional contributors: ${answers.credits } 
   
   ---
   ## Features
@@ -159,9 +132,8 @@ const generateMD  = (answers) =>
   ---
   ## License
   
-  ### ${answers.license}
+  ### This project is licensed by ${answers.license}
   
-  ---
   `;
 
 // Bonus using writeFileAsync as a promise

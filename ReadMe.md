@@ -70,31 +70,7 @@
   ---
   ## License
   
-  ### This project is licensed by MIT.
-  
-  
-  
-  ---
-  ## Contributors
 
-  Primary Contributor: Justin Oeters
-  
-  If you have any questions regarding this program, please contact me by email: justin.oeters@gmail.com.
-  
-  My github profile is: https://github.com/gus1919
-
-  Additional Contributors: Solo Project.
-
-  ---
-  ## Features
-  *  Javascript, node.js
-  ---
-  ## Issues
-
-  ### None. 
-  
-  ---
-  ## License
   
   
   

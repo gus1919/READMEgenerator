@@ -62,7 +62,7 @@ const promptUser = () => {
     {
       type: 'input',
       name: 'credits',
-      message: 'Who contributed to this project?',
+      message: 'Who else contributed to this project?',
     },
 
     //features

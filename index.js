@@ -88,21 +88,20 @@ const generateMD  = (answers) =>
   `# **${answers.title}** 
   
 
-  ![License](https://img.shields.io/badge/License-${answers.license}-blue.svg)
+  ![LicenseBadge](https://img.shields.io/badge/License-${answers.license}-blue.svg)
   ---
   ## Description
   
   >${answers.description}
   
   ---
-  ## table of contents
-  * [Description](#description)
+  ## Table of contents
+  * [Description](#sescription)
   * [Installation](#installation)
-  * [Usage](#usage)
+  * [Use](#use)
   * [Contributors](#contributors)
-  * [Tests](#tests)
-  * [Questions](#questions)
   * [Features](#features)
+  * [Issues](#issues)
   * [License](#license)
   ---
   ## Installation
@@ -129,7 +128,7 @@ const generateMD  = (answers) =>
   ## Features
   * ${answers.features}
   ---
-  ## Known Issues and Future Development
+  ## Issues
 
   ### ${answers.test} 
   

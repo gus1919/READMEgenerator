@@ -22,7 +22,7 @@
   ## Use
 
   >In a command line interface (CLI) use the command: 'node index.js'
-  >Here is a link to the video: # **Read Me Generator** 
+  >Here is a link to the video: https://watch.screencastify.com/v/NeZ97JXqKsmD49g2jvkd 
   
   ---
   ## Description

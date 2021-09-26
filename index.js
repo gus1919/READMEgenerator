@@ -8,6 +8,24 @@ const writeFileAsync = util.promisify(fs.writeFile);
 const promptUser = () => {
   return inquirer.prompt([
 
+    
+    //User information
+    {
+      type: 'input',
+      name: 'username',
+      message: 'What is your Name?',
+    },
+    {
+      type: 'input',
+      name: 'email',
+      message: 'Please enter your email address.',
+    },
+    {
+      type: 'input',
+      name: 'github',
+      message: 'What is your github user name?',
+    },
+    
     // Title
     {
       type: 'input',
@@ -18,59 +36,43 @@ const promptUser = () => {
     {
       type: 'input',
       name: 'description',
-      message: 'Provide a short description of the project.',
+      message: 'Pleas provide a short description of the project.',
     },
     //Installation Instructions
     {
       type: 'input',
       name: 'installation',
-      message: 'What dependencies are needed for this project?',
+      message: 'What is needed to install or run this project (i.e. dependencies, programs, etc...)?',
     },
     //How to run the program
     {
       type: 'input',
-      name: 'Usage',
-      message: 'How do you run the project?',
+      name: 'use',
+      message: 'How do you execute this program?',
+    },
+
+    //testing
+    {
+      type: 'input',
+      name: 'test',
+      message: 'Are there any known issues or future developments?',
     },
     
     //contributors
     {
       type: 'input',
       name: 'credits',
-      message: 'Please provide the names and emails of any collaborators.',
+      message: 'Who contributed to this project?',
     },
 
-    //testing
-    {
-      type: 'input',
-      name: 'tests',
-      message: 'Are there any tests for the project?',
-    },
     //features
     {
       type: 'checkbox',
       name: 'features',
       message: 'What programs did you use?',
-      choices: ['HTML', 'CSS', 'Javascript', 'node.js', 'API'],
+      choices: [' HTML', ' CSS', ' Javascript', ' node.js', ' API'],
     },
 
-    {
-      type: 'input',
-      name: 'features',
-      message: 'Any other programs not listed?',
-         },
-
-    //questions
-    {
-      type: 'input',
-      name: 'githubusername',
-      message: 'Please enter your Github User Name',
-    },
-    {
-      type: 'input',
-      name: 'githubuserprofile',
-      message: 'Please enter your Github Profile Link',
-    },
     //License
     {
       type: 'list',
@@ -86,7 +88,7 @@ const generateMD  = (answers) =>
   `# **${answers.title}** 
   
 
-  ![License](https://img.shields.io/badge/license-${answers.license}-blue.svg)
+  ![License](https://img.shields.io/badge/License-${answers.license}-blue.svg)
   ---
   ## Description
   
@@ -108,35 +110,36 @@ const generateMD  = (answers) =>
    >${answers.installation}
  
   ---
-  ## Usage
+  ## Use
 
-  >${answers.Usage}
+  >${answers.use}
   
   ---
   ## Contributors
-  
-  ### Project Lead: ${answers.githubusername}
 
-  GIThub Profile: ${answers.githubuserprofile}
+  Primary Contributor: ${answers.username}
   
-  Additional contributors: ${answers.credits } 
+  If you have any questions regarding this program, please contact me by email: ${answers.email}.
   
+  My github profile is: https://github.com/${answers.github}
+
+  Additional Contributors: ${answers.credits}
+
   ---
   ## Features
   * ${answers.features}
   ---
-  ## Tests
+  ## Known Issues and Future Development
 
-  ### ${answers.tests} 
+  ### ${answers.test} 
   
   ---
   ## License
   
-  ### This project is licensed by ${answers.license}
+  ### This project is licensed by ${answers.license}.
   
   `;
 
-// Bonus using writeFileAsync as a promise
 const init = () => {
   promptUser()
     .then((answers) => writeFileAsync('README2.md', generateMD(answers)))

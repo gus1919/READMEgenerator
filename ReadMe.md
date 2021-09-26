@@ -30,25 +30,6 @@
   >In this project, you can use Node.js to quickly generate a readme file.
   
   ---
-  ## Table of contents
-  * [Description](#sescription)
-  * [Installation](#installation)
-  * [Use](#use)
-  * [Contributors](#contributors)
-  * [Features](#features)
-  * [Issues](#issues)
-  * [License](#license)
-  ---
-  ## Installation
-   
-   >You need to have node js installed with the following dependencies: inquirer and fs.
- 
-  ---
-  ## Use
-
-  >In a command line interface (CLI) use the command: 'node index.js'
-  
-  ---
   ## Contributors
 
   Primary Contributor: Justin Oeters

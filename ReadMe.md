@@ -22,8 +22,13 @@
   ## Use
 
   >In a command line interface (CLI) use the command: 'node index.js'
+  >
   >Here is a link to the video: https://watch.screencastify.com/v/NeZ97JXqKsmD49g2jvkd 
-  
+  >
+  >Here is a link to the github portfolio:https://github.com/gus1919/READMEgenerator
+  >
+  ![Screenshot (29)](https://user-images.githubusercontent.com/86876335/134813102-8bdebf9f-d864-463c-80e7-63b6bfc44356.png)
+
   ---
   ## Description
   
